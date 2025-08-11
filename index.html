@@ -1,166 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DESCUBRE ISLA OMETEPE</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%230288d1' d='M50 15L20 80h60z'/><circle fill='%23ff5722' cx='50' cy='45' r='10'/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS mejorados */
+        :root {
+            --color-primary: #0288d1;
+            --color-secondary: #26a69a;
+            --color-dark: #01579b;
+            --color-light: #e0f7fa;
+            --color-text: #2e3c3f;
+            --color-white: #ffffff;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-dark);
+        }
+        
+        header {
+            background: linear-gradient(rgba(2, 136, 209, 0.8), rgba(2, 136, 209, 0.9)), url('img/volcanes.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var(--color-dark);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            background-color: var(--color-white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        button {
+            background-color: var(--color-secondary);
+            border: none;
+            padding: 12px 25px;
+            color: var(--color-white);
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #00897b;
+        }
+        
+        /* Galería mejorada */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .galeria img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .galeria img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilos para lugares destacados */
+        .lugares-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .lugar-card {
+            background-color: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .lugar-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .lugar-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .lugar-content {
+            padding: 15px;
+        }
+        
+        .lugar-content h3 {
+            margin-top: 0;
+            color: var(--color-primary);
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            color: var(--color-dark);
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .galeria {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-   <style>
-    /* Estilos CSS */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0fdfb;
-      color: #2e3c3f;
-    }
+    <header>
+        <h1>🏝️ Ometepe: La joya de agua dulce y fuego</h1>
+        <p>Un paraíso único donde dos majestuosos volcanes se alzan sobre las aguas del Lago de Nicaragua</p>
+    </header>
 
-    header {
-      background-color: #0288d1;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#lugares">Lugares destacados</a>
+        <a href="#atracciones">Atracciones</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-    nav {
-      background-color: #0277bd;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 10px;
-    }
+    <main>
+        <section id="historia">
+            <h2>Historia y esencia de Ometepe</h2>
+            <p class="intro-text">
+                "Ometepe es mucho más que un destino turístico: es un sitio sagrado donde habitan la historia, la cultura y la naturaleza en perfecta armonía."
+            </p>
+            <p>
+                Isla Ometepe, ubicada en el Lago Cocibolca (Nicaragua), está formada por dos majestuosos volcanes: el Concepción (activo y perfectamente cónico) y el Maderas (cubierto de selva tropical). Su nombre proviene del náhuatl: <em>"ome" (dos) y "tepetl" (cerros)</em>.
+            </p>
+            <p>
+                Con una rica herencia indígena, la isla alberga pueblos vibrantes como Moyogalpa y Altagracia, guardianes de antiguas tradiciones y petroglifos que cuentan relatos de tribus originarias. Su biodiversidad extraordinaria y paisajes impresionantes la convierten en un oasis de paz y aventura.
+            </p>
+        </section>
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        <section id="lugares">
+            <h2>Lugares destacados de Ometepe</h2>
+            <div class="lugares-container">
+                <!-- Restaurante The Cornerhouse -->
+                <div class="lugar-card">
+                    <img src="IMG/RestCornerhouse.jpeg" alt="Restaurante The Cornerhouse" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>The Cornerhouse - Moyogalpa</h3>
+                        <p>Acogedor café-restaurante con ambiente cálido, famoso por sus desayunos saludables, café orgánico y opciones caseras preparadas con ingredientes frescos. Punto de encuentro popular entre viajeros y locales.</p>
+                    </div>
+                </div>
+                
+                <!-- Playa Mangos -->
+                <div class="lugar-card">
+                    <img src="IMG/PlayaMangos.jpeg" alt="Playa Mangos" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>Playa Mangos</h3>
+                        <p>Refugio natural con arena oscura y aguas tranquilas del Lago Cocibolca. Desde la orilla se aprecia el majestuoso volcán Concepción, especialmente al atardecer. Ambiente sereno ideal para nadar y descansar bajo la sombra de árboles tropicales.</p>
+                    </div>
+                </div>
+                
+                <!-- Volcán Concepción -->
+                <div class="lugar-card">
+                    <img src="IMG/VolcanConcepcion.jpeg" alt="Volcán Concepción" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>Volcán Concepción</h3>
+                        <p>Coloso imponente de forma cónica perfecta, activo y desafiante. Destino favorito para excursionistas experimentados, con ascenso exigente recompensado por vistas panorámicas del lago, la isla y el volcán Maderas.</p>
+                    </div>
+                </div>
+                
+                <!-- Volcán Maderas -->
+                <div class="lugar-card">
+                    <img src="IMG/VolcanMaderas.jpeg" alt="Volcán Maderas" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>Volcán Maderas</h3>
+                        <p>Cubierto de espesa selva tropical, hogar de monos y aves exóticas. Sus senderos conducen a la laguna del cráter y la cascada de San Ramón. Experiencia de inmersión total en la naturaleza con aire fresco y sonidos de fauna silvestre.</p>
+                    </div>
+                </div>
+                
+                <!-- Punta Jesús María -->
+                <div class="lugar-card">
+                    <img src="IMG/PuntaJesus.jpeg" alt="Punta Jesús María" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>Punta Jesús María</h3>
+                        <p>Lengua de arena que se adentra en el lago, permitiendo caminar rodeado de agua. Atardeceres espectaculares con el sol escondiéndose detrás de los volcanes. Excelente para observación de aves y disfrutar de tranquilidad.</p>
+                    </div>
+                </div>
+                
+                <!-- Cascada San Ramón -->
+                <div class="lugar-card">
+                    <img src="IMG/CascadaSanRamon.jpeg" alt="Cascada San Ramón" class="lugar-img">
+                    <div class="lugar-content">
+                        <h3>Cascada San Ramón</h3>
+                        <p>Tesoro natural de más de 50 metros en las faldas del Maderas. El sendero atraviesa cafetales y bosques. Al llegar, la bruma refrescante y el sonido del agua crean un ambiente de paz y energía renovadora.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        <section id="atracciones">
+            <h2>Experiencias únicas en Ometepe</h2>
+            <ul>
+                <li><strong>Ascenso a volcanes:</strong> Concepción (desafiante) y Maderas (selvático)</li>
+                <li><strong>Kayak en Río Istiam:</strong> Navegación entre manglares para observar aves acuáticas y caimanes</li>
+                <li><strong>Visita a petroglifos:</strong> Arte rupestre de las tribus originarias</li>
+                <li><strong>Relax en playas:</strong> Playa Santo Domingo, Charco Verde y Playa Mangos</li>
+                <li><strong>Senderismo ecológico:</strong> Cascada San Ramón y reservas naturales</li>
+                <li><strong>Gastronomía local:</strong> Comedor Los Mangos y otros restaurantes típicos</li>
+            </ul>
+            <button onclick="mostrarMensaje()">¡Quiero vivir esta aventura!</button>
+        </section>
 
-    main {
-      padding: 20px;
-    }
+        <section id="galeria">
+            <h2>Galería Fotográfica</h2>
+            <div class="galeria">
+                <!-- Imágenes del documento y otras -->
+                <img src="IMG/img1.jpeg" alt="Hermosa Vista">
+                <img src="IMG/img4.jpeg" alt="Grupo3">
+                <img src="IMG/img5.jpeg" alt="Grupo Todos">
+                <img src="IMG/img6.jpeg" alt="Comida típica en Comedor Los Mangos">
+                <img src="IMG/img8.jpeg" alt="Amigos">
+                <!--<img src="img/img7.JPEG" alt="Petroglifos en Ometepe">-->
+            </div>
+        </section>
 
-    section {
-      margin-bottom: 30px;
-    }
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <p>¿Listo para descubrir la magia de Ometepe? Escríbenos para más información:</p>
+            <p><strong>Email:</strong> visita@ometepe.travel</p>
+            <p><strong>Teléfono:</strong> +505 1234 5678</p>
+        </section>
+    </main>
 
-    footer {
-      background-color: #0288d1;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
+    <footer>
+        <p>&copy; 2025 Isla Ometepe Turismo. Todos los derechos reservados.</p>
+        <p>La joya de agua dulce y fuego en el corazón de Nicaragua</p>
+    </footer>
 
-    button {
-      background-color: #26c6da;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background-color: #00acc1;
-    }
-
-    /* Galería */
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .galeria img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    h2 {
-      color: #01579b;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🏝️ Bienvenidos a Isla Ometepe</h1>
-    <p>Un tesoro natural e histórico en el corazón de Nicaragua</p>
-  </header>
-
-  <nav>
-    <a href="#historia">Historia</a>
-    <a href="#atracciones">Atracciones</a>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <main>
-    <section id="historia">
-      <h2>Historia de Isla Ometepe</h2>
-      <p>
-        Isla Ometepe, ubicada en el Lago Cocibolca, está formada por dos majestuosos volcanes: el Concepción y el Maderas. Su nombre proviene del náhuatl: *"ome" (dos) y "tepetl" (cerros)*. Fue habitada desde tiempos precolombinos y es rica en petroglifos, leyendas y cultura indígena.
-      </p>
-    </section>
-
-    <section id="atracciones">
-      <h2>Atracciones Turísticas</h2>
-      <ul>
-        <li>Subida al Volcán Concepción y Volcán Maderas</li>
-        <li>Ojo de Agua: manantial natural cristalino</li>
-        <li>Petroglifos y sitios arqueológicos</li>
-        <li>Playa Santo Domingo y Charco Verde</li>
-        <li>Kayak en el Río Istiam y avistamiento de fauna</li>
-      </ul>
-      <button onclick="mostrarMensaje()">¡Quiero visitar Ometepe!</button>
-    </section>
-
-    <section id="galeria">
-      <h2>Galería Fotográfica</h2>
-      <div class="galeria">
-        <!-- Las 10 imágenes -->
-        <img src="IMG/img1.jpeg" alt="Foto 1 Isla Ometepe">
-        <img src="IMG/img2.jpeg" alt="Foto 2 Isla Ometepe">
-        <img src="IMG/img3.jpeg" alt="Foto 3 Isla Ometepe">
-        <img src="IMG/img4.jpeg" alt="Foto 4 Isla Ometepe">
-        <img src="IMG/img5.jpeg" alt="Foto 5 Isla Ometepe">
-        <img src="IMG/img6.jpeg" alt="Foto 6 Isla Ometepe">
-        <img src="IMG/img7.jpeg" alt="Foto 7 Isla Ometepe">
-        <img src="IMG/img8.jpeg" alt="Foto 8 Isla Ometepe">
-        <img src="IMG/img9.jpeg" alt="Foto 9 Isla Ometepe">
-        <img src="IMG/img10.jpeg" alt="Foto 10 Isla Ometepe">        
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2>Contáctanos</h2>
-      <p>¿Listo para la aventura? Escríbenos a: <strong>visita@ometepe.travel</strong></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Isla Ometepe Turismo. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    function mostrarMensaje() {
-      alert("¡Gracias por tu interés en Isla Ometepe! 🌋 Te esperamos con los brazos abiertos.");
-    }
-  </script>
+    <script>
+        function mostrarMensaje() {
+            alert("¡Gracias por tu interés en Isla Ometepe! 🌋 Un paraíso donde el agua y el fuego se entrelazan. Te esperamos para una experiencia inolvidable.");
+        }
+    </script>
 </body>
 </html>
